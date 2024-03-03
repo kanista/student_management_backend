@@ -4,6 +4,9 @@ import com.example.student.exception.StudentNotFoundException;
 import com.example.student.model.StudentEntity;
 import com.example.student.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.data.domain.Page;
+//import org.springframework.data.domain.PageRequest;
+//import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -27,6 +30,12 @@ public class StudentServiceImp implements StudentService{
     public List<StudentEntity> getAllStudents(){
         return studentRepository.findAll();
     }
+
+//    @Override
+//    public Page<StudentEntity> getAllStudents(int page, int pageSize) {
+//        Pageable pageable = PageRequest.of(page - 1, pageSize);
+//        return studentRepository.findAll(pageable);
+//    }
 
     @Override
     public Optional<StudentEntity> getStudentById(Integer studentId) {

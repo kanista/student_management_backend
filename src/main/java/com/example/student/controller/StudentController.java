@@ -4,6 +4,7 @@ import com.example.student.exception.StudentNotFoundException;
 import com.example.student.model.StudentEntity;
 import com.example.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +36,15 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.OK).body(studentEntities);
     }
 
+//    @GetMapping("/getAllStudents")
+//    public ResponseEntity<List<StudentEntity>> getAllStudents(
+//            @RequestParam(defaultValue = "1") int page,
+//            @RequestParam(defaultValue = "10") int pageSize
+//    ) {
+//        Page<StudentEntity> studentPage = studentService.getAllStudents(page, pageSize);
+//        List<StudentEntity> studentEntities = studentPage.getContent();
+//        return ResponseEntity.status(HttpStatus.OK).body(studentEntities);
+//    }
 
     @GetMapping("/getStudent/{id}")
     public ResponseEntity<?> getStudentById(@PathVariable Integer id) {
