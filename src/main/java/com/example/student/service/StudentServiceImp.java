@@ -63,6 +63,13 @@ public class StudentServiceImp implements StudentService{
             StudentEntity existingStudent=student.get();
             existingStudent.setName(newStudent.getName());
             existingStudent.setAddress(newStudent.getAddress());
+            existingStudent.setCourse(newStudent.getCourse());
+            existingStudent.setGender(newStudent.getGender());
+            existingStudent.setGuardianName(newStudent.getGuardianName());
+            existingStudent.setRelationship(newStudent.getRelationship());
+            existingStudent.setDateOfBirth(newStudent.getDateOfBirth());
+            existingStudent.setPhoneNo(newStudent.getPhoneNo());
+            existingStudent.setGuardianPhoneNumber(newStudent.getGuardianPhoneNumber());
             return studentRepository.save(existingStudent);
         }else{
             throw new StudentNotFoundException("Student not found with ID: " + studentId);
