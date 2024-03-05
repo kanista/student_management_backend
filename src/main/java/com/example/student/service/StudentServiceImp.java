@@ -40,11 +40,12 @@ public class StudentServiceImp implements StudentService{
     @Override
     public Optional<StudentEntity> getStudentById(Integer studentId) {
         Optional<StudentEntity> student=studentRepository.findById(studentId);
-        if(student.isPresent()){
-            return student;
-        }else{
-            throw new StudentNotFoundException("Student not found with ID: "+studentId);
-        }
+        return student;
+//        if(student.isPresent()){
+//            return student;
+//        }else{
+//            throw new StudentNotFoundException("Student not found with ID: "+studentId);
+//        }
     }
 
     @Override
